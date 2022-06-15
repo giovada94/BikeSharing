@@ -1,0 +1,18 @@
+Si vuole gestire l'informazione di un servizio di bike sharing. 
+Si deve creare una applicazione che permette: 
+o- Inserimento di una nuova bicicletta; 
+o- Modifica di una bicicletta; 
+o- Cancellazione di una bicicletta (per id) 
+o- Visualizzazione di tutte le bici disponibili 
+o- Visualizzazione delle n biciclette
+ - Visualizzazione delle biciclette ordinate per km
+- Visualizzazione di una determinata bici (per id) 
+- Visualizzazione di tutte le bici di un determinata marca 
+ 
+Bici: 
+id -PK INT AUTOINCREMENT 
+modello (usa una lista di selezione: Corsa, MB, passeggio,tandem) 
+SIGLA 
+km 
+lat 
+lng

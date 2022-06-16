@@ -25,5 +25,7 @@ import com.example.BikeSharing.Entity.Bike;
 		//Visualizzazione delle n biciclette
 		//List<Bike> findAll(PageRequest pageRequest);
 		Page<Bike> findAll(Pageable pageable);
+
+		List<Bike> findByModelloAndKmLessThan(String mod,int km);
 	}
 

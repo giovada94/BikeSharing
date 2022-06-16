@@ -19,4 +19,10 @@ public interface IBikeService {
 	List<Bike> MostraTutto();
 	
 	Page<Bike> MostraBiciLimit(int n);
+	
+	List<Bike> MostraBiciOrdKm();
+	
+	Bike BiciPerId(int id);
+	
+	List<Bike> BiciPerModelloKm(String mod,int km);
 }

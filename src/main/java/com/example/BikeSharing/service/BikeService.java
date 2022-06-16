@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
@@ -38,4 +39,20 @@ public class BikeService implements IBikeService{
     public Page<Bike> MostraBiciLimit(int n){
     	return  repository.findAll(PageRequest.of(0, n));
     }
+    
+    @Override
+    public List<Bike> MostraBiciOrdKm(){
+    	return (List<Bike>) repository.findAll(Sort.by("km"));
+    }
+    
+    @Override
+    public Bike BiciPerId(int id) {
+    	return repository.findById(id).get();
+    }
+    
+    @Override
+	public List<Bike> BiciPerModelloKm(String mod,int km){
+    	return repository.findByModelloAndKmLessThan(mod,km);
+    }
+	
 }

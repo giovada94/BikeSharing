@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.BikeSharing.Class.RequestBodyModKm;
 import com.example.BikeSharing.Entity.Bike;
 import com.example.BikeSharing.Entity.User;
 import com.example.BikeSharing.service.IBikeService;
@@ -53,6 +54,21 @@ public class BikeController {
 	}
 	
 	
+	@GetMapping(path="/km") 
+	public @ResponseBody List<Bike> orderbikekm () {
+		return bikeService.MostraBiciOrdKm();
+	}
 	
+	@GetMapping(path="/id/{id}") 
+	public @ResponseBody Bike BiciPerId(@PathVariable(value="id") int id) {
+		return bikeService.BiciPerId(id);
+	}
+	
+	
+	
+	@PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},path="/modellokm") 
+	public @ResponseBody List<Bike> BiciModelloKm (@RequestBody RequestBodyModKm b) {
+		return bikeService.BiciPerModelloKm( b.getModello(), b.getKm());
+	}
 	
 }
